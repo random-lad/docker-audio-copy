@@ -1,0 +1,47 @@
+MotionNotify 75 45
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 73 244
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 292 215
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 189 279
+ButtonPress 1
+ButtonRelease 1
+KeyStrPress m
+KeyStrRelease m
+KeyStrPress n
+KeyStrRelease n
+KeyStrPress t
+KeyStrRelease t
+KeyStrPress slash
+KeyStrRelease slash
+KeyStrPress d
+KeyStrRelease d
+KeyStrPress r
+KeyStrRelease r
+KeyStrPress i
+KeyStrRelease i
+KeyStrPress v
+KeyStrRelease v
+KeyStrPress e
+KeyStrRelease e
+KeyStrPress 0
+KeyStrRelease 0
+MotionNotify 307 306
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 207 302
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 153 374
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 372 455
+ButtonPress 1
+ButtonRelease 1
+MotionNotify 206 457
+ButtonPress 1
+ButtonRelease 1
