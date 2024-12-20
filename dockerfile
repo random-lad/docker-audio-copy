@@ -23,7 +23,8 @@ RUN apt-get update && apt-get install -y \
     pulseaudio-utils \
     xvfb \
     kdialog \
-    xmacro
+    xmacro \
+ && rm -rf /var/lib/apt/lists/*
 
 # Set up unprivileged user
 ENV UNAME=ubuntu
@@ -61,10 +62,9 @@ ENV DISPLAY=:0
 COPY ./src/drive.xmacro /tmp/drive.xmacro
 RUN Xvfb $DISPLAY -screen 0 1024x768x16 \
   & winecfg \
-  & sleep 3 \
+  & sleep 6 \
  && xmacroplay $DISPLAY < /tmp/drive.xmacro \
- && sleep 3 \
- && wineserver -k
+ && sleep 6
 
 # Set up audio support
 COPY src/pulse-client.conf /etc/pulse/client.conf

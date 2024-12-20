@@ -8,7 +8,7 @@ This project is a Docker container for [Exact Audio Copy](https://www.exactaudio
 
 ## Pull & Run
 ```sh
-docker pull docker-audio-copy
+docker pull ghcr.io/random-lad/docker-audio-copy
 mkdir .wine
 docker run -it --rm \
   --device /dev/sr0 \
@@ -17,7 +17,7 @@ docker run -it --rm \
   -v "${XAUTHORITY:-${HOME}/.Xauthority}:/home/ubuntu/.Xauthority:ro" \
   -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
   -e DISPLAY \
-  docker-audio-copy
+  ghcr.io/random-lad/docker-audio-copy
 ```
 Use the default install location!
 
