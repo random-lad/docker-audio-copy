@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  vnc:
+    container_name: vnc
+    image: ghcr.io/dtinth/xtigervnc-docker:main
+    network_mode: bridge
+    ports:
+      - 5900:5900
+    volumes:
+      - /tmp/.X11-docker:/tmp/.X11-unix:rw
+
+  dac:
+    container_name: dac
+    devices:
+      - /dev/sr0
+    image: docker-audio-copy
+    build:
+      context: .
+      dockerfile: dockerfile
+    network_mode: bridge
+    volumes:
+      - .wine:/mnt/wine
+      - /tmp/.X11-docker:/tmp/.X11-unix:rw
+    environment:
+      VNC: 1
+    depends_on:
+      - vnc

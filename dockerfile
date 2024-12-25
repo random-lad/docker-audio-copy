@@ -14,9 +14,8 @@ RUN dpkg --add-architecture i386 \
  && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ noble main'
 
 # Install wine and tools
-ARG WINE_VERSION=10.0~rc2~noble-1
 RUN apt-get update && apt-get install -y \
-    winehq-devel=$WINE_VERSION \
+    winehq-devel \
     winetricks \
     libvulkan1 \
     libvulkan1:i386 \

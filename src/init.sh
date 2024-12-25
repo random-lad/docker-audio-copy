@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f ~/.Xauthority ]; then
+if [ -z "$VNC" ] && [ ! -f ~/.Xauthority ]; then
   echo "$HOME/.Xauthority is not available, please mount it. Exiting ..."
   exit 1
 fi
