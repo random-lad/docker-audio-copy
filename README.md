@@ -1,6 +1,7 @@
-# Docker Audio Copy 1.8.0
+# Docker Audio Copy 1.8.1
 This project is a Docker container for [Exact Audio Copy](https://www.exactaudiocopy.de/) (EAC) version `1.8`. It allows Linux (and Mac) users to easily and reliably run EAC in a preconfigured environment. Graphical windows & audio can be forwarded to the host machine through X11 and PulseAudio. The CD-ROM drive is already added in the Wine config and fstab. Just **Pull & Run**; no additional host configuration is needed to use the software.
 
+Headless VNC mode is also supported (using `docker-compose`).
 
 ## License
 **I DO NOT OWN THE COPYRIGHT TO THE WRAPPED SOFTWARE**, nor does this wrapper violate the license of the wrapped software. The Docker image does not contain any binary of the (proprietary) software that it wraps. It is the end user who downloads the installer and accepts the **END USER AGREEMENT** on the initial run of the container.
@@ -50,6 +51,12 @@ Using the `.X11-unix` and `.Xauthority` mounts, the application's windows are fo
 ### Sound
 The `pulse` mount is enough to allow sound to be passed to PulseAudio on the host machine. Credits to [docker-pulseaudio-example](https://github.com/TheBiggerGuy/docker-pulseaudio-example), it is surprisingly simple. PipeWire can bridge with Pulse, and is therefore also supported. Alsa is not supported, but [could easily be added](https://github.com/mviereck/x11docker/wiki/Container-sound:-ALSA-or-Pulseaudio).
 
+### Headless VNC
+It is possible to run the EAC in a headless docker container and connect using VNC. Just run;
+```
+docker-compose up -d
+```
+And connect your VNC client to the VNC server using port `5900`.
 
 ## Versions
 Older versions probably work too, but this setup is confirmed to work with the following software versions on the host;
